@@ -11,7 +11,6 @@ services:
     networks:
       - front-tier
       - back-tier
-      - elknetwork
     logging:
         driver: syslog
         options:
@@ -27,7 +26,6 @@ services:
     networks:
       - front-tier
       - back-tier
-      - elknetwork
     logging:
         driver: syslog
         options:
@@ -40,7 +38,6 @@ services:
       - "db"
     networks:
       - back-tier
-      - elknetwork
     logging:
         driver: syslog
         options:
@@ -52,7 +49,6 @@ services:
     ports: ["6379"]
     networks:
       - back-tier
-      - elknetwork
     logging:
         driver: syslog
         options:
@@ -68,7 +64,6 @@ services:
       - "db-data:/var/lib/postgresql/data"
     networks:
       - back-tier
-      - elknetwork
     logging:
         driver: syslog
         options:
@@ -80,4 +75,3 @@ volumes:
 networks:
   front-tier:
   back-tier:
-  elknetwork:
